@@ -1,0 +1,12 @@
+name: Test Custom Runner
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: [self-hosted]
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Running on custom self-hosted runner"
