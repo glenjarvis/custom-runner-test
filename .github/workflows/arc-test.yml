@@ -1,0 +1,20 @@
+name: ARC Runner Test
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:  # allows manual triggering
+
+jobs:
+  build:
+    runs-on: [self-hosted]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run basic commands
+        run: |
+          echo "Running on ARC self-hosted runner!"
+          uname -a
+          echo "Done!"
+
